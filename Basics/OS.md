@@ -5,3 +5,11 @@ It makes it easier for the user to interact with these resources, helps to utili
 On top of bare metal Kernel is present which talks to hardware which runs in kernel mode such that it has access to all the resources.
 Above kernel lies our Shell (bash, sh, zsh, etc) from which user gives commands to make system calls to kernel.
 <img width="664" height="347" alt="image" src="https://github.com/user-attachments/assets/8d7bb6b2-0fcb-4cb4-8937-a9a65e6aba47" />
+
+
+A user application should not have access to underlying physical resources directly as they can do a shutdown of system etc, for this security reasons an application request is sent through system calls to kernel.
+
+User application -> system call -> kernel (to fetch the file)
+
+CPU mode (switches from user mode -> kernel mode)
+
