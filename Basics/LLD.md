@@ -105,6 +105,7 @@ help.
 
 ## Singleton: one shared instance, centrally controlled
 Intution: For the whole application when you need a service that only one instance is available. The core intuition (one shared instance, centrally controlled) is right
+
 When to use this: When you modify something it has to be applicable for the whole application. If each class or service creates its own instance it is difficult to change a config for whole application. For example consider logger service if each class using logger creates its own instance then to make app to log DEBUG level needs update in all the instance if its not singleton
 
 - **Shared mutable state:** a cache, a connection pool, an in-memory counter — if two instances existed, they’d diverge and you’d get inconsistent behavior.
