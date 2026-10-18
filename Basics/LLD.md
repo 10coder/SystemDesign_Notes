@@ -110,11 +110,32 @@ help.
 * Dependency Inversion
 
 ## Single Responsibility:
-It doesnt mean a single method per class. It means a class should be responsible for 1 functionality. For example OrderService class should not contain logic for sending email after order.
+It doesnt mean a single method per class. It means a class should be responsible for 1 functionality. For example OrderService class should not contain logic for sending email after order. Every class should have a single reason to change, like if the reasons are Payment method has to change and cancelling the order, both should not update same class. Anything related to Payment should be a separate class. Anything related to Order should be a separate class.
+
+Problem: Consider OrderService class has method for sending email, invoice generation and payment method. lets say they are paying using Credit card now in future they add ApplePay we need to modify this class and all the classes where payment needs to be done.
+- A single class handling too many things would increase over time.
+- Difficult to debug
+- To change a class Unit tests have to change
+
+Solution: separate classes for each responsibility
+- PaymentService class -> (Responsibility of Payment)
+- NotificationService class -> (Responsibility of Notifications)
+- InvoiceGenerationService class -> (Responsibility of Invoice Generation)
+
+## Open/Closed Principle:
+Code should be open for extension and closed for modification. One should be able add new functionality without changing the already tested existing code. A small change can break something that is working perfectly fine.
+
+It doesnt mean we should never change or touch existing code. Lets say UPIPaymentService needs an update we can update it but if we want to add new PaymentService there has to be a PaymentService Interface with payment method and any new PaymentService should implement that interface.
+
 
 
 -------
 # Design patterns
+
+- Creational (how objects get created)
+- Structural (how objects/classes get put together)
+          - How classes are wired together
+- Behavioral (how objects talk to each other / share responsibility).
 
 ## Singleton: one shared instance, centrally controlled
 Intution: For the whole application when you need a service that only one instance is available. The core intuition (one shared instance, centrally controlled) is right
