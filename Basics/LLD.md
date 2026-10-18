@@ -101,6 +101,19 @@ help.
 
 -------
 
+# SOLID 
+
+* Single Reponsibility - A class should have 1 responsibility
+* Open/Close
+* Liskov Substitution
+* Interface Seggregation
+* Dependency Inversion
+
+## Single Responsibility:
+It doesnt mean a single method per class. It means a class should be responsible for 1 functionality. For example OrderService class should not contain logic for sending email after order.
+
+
+-------
 # Design patterns
 
 ## Singleton: one shared instance, centrally controlled
@@ -120,4 +133,12 @@ Other examples beyond logger:
 
 the trade-offs:
 Unit Testing is difficult, Hidden dependencies- classes that silently reach for Singleton.getInstance() instead of having it injected are harder to test and reason about.
+
+
+## Factory: 
+
+
+## Observer:
+The Observer Pattern is a behavioral design pattern where an object (called the Subject) maintains a list of its dependents (called Observers) and notifies them automatically of any state changes, usually by calling one of their methods. It is commonly used for implementing distributed event-handling systems.
+
 
