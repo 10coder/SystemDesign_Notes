@@ -132,10 +132,12 @@ It doesnt mean we should never change or touch existing code. Lets say UPIPaymen
 -------
 # Design patterns
 
-- Creational (how objects get created)
-- Structural (how objects/classes get put together)
-          - How classes are wired together
-- Behavioral (how objects talk to each other / share responsibility).
+- Creational 
+  - How objects are created
+- Structural
+  - How classes are wired together
+- Behavioral
+  - (how objects talk to each other / share responsibility).
 
 ## Singleton: one shared instance, centrally controlled
 Intution: For the whole application when you need a service that only one instance is available. The core intuition (one shared instance, centrally controlled) is right
