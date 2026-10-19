@@ -132,8 +132,10 @@ It doesnt mean we should never change or touch existing code. Lets say UPIPaymen
 -------
 # Design patterns
 
+How objects are created creational, how they are composed like 
+
 - Creational 
-  - How objects are created
+  - How objects are created. It deals with when and how objects are created so that rest of the code cannot worry about how to create a certain object 
 - Structural
   - How classes are wired together
 - Behavioral
